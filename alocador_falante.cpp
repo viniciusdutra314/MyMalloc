@@ -3,7 +3,7 @@
 #include <vector>
 
 template <typename T>
-class AlocadorFalante{
+class StackAllocator{
     std::allocator<T> default_alloc;
     public:
         using value_type = T;
@@ -19,7 +19,7 @@ class AlocadorFalante{
 
 
 int main(){
-    std::vector<int,AlocadorFalante<int>> vec;
+    std::vector<int,StackAllocator<int>> vec;
     for (int i=0;i<5;i++){
         vec.push_back(i);
     }
